@@ -22,7 +22,7 @@ is the only thing running on your system you can map the port to 80 and no
 proxy is needed. i.e. `-p=80:80` Also be sure your mounted directory on your
 host machine is already created before running this `mkdir -p /mnt/piwik`.
 
-    sudo docker run -p=10000:80 -v=/mnt/piwik:/data dz0ny/piwik
+    sudo docker run -name piwik -p=10000:80 -v=/mnt/piwik:/data dz0ny/piwik
 
 Note that the first time you run this it sets up your piwik user and database
 as well as locking down your root user. **This will echo out your database
@@ -40,7 +40,8 @@ name which is `dz0ny/piwik:latest`.
 
 ### Notes on the run command
 
- + `-v` is the volume you are mounting `-v=host_dir:docker_dir`
+ + `-name` assigns a name to the container. You can use that name instead of
+   container id.  + `-v` is the volume you are mounting `-v=host_dir:docker_dir`
  + `overshard/piwik` is simply what I called my docker build of this image
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
  + `-p` is the port it connects to, `-p=host_port:docker_port`
