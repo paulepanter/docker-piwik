@@ -2,7 +2,7 @@
 
 A nice and easy way to get a Piwik instance up and running using docker. For
 help on getting started with docker see the [official getting started guide][0].
-For more information on Piwik and check out it's [website][1].
+For more information on Piwik and check out its [website][1].
 
 
 ## Building docker-piwik
